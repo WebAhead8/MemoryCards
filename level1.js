@@ -4,8 +4,7 @@ const cards = document.querySelectorAll('.memory-card');
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
-var gameStarted = false;
-var runnig = false;
+
 
 function flipCard() {
     
@@ -64,10 +63,6 @@ function resetBoard() {  // to let you click the card you have clicked befor
         card.style.order = randomPos;
     });
 })();
-
-
-
-
 
 
 
