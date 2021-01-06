@@ -1,14 +1,22 @@
 * {
-    padding: 0;
-  margin: 0;
   box-sizing: border-box;
 } 
 
-.body1 {
-    height: 100vh; /* 1% viewport height */ 
-    background-image: url(https://thewallpaper.co/wp-content/uploads/2020/07/texture-wallpaper-hd-pictures-images.jpg);
-    display: flex;
+html {
+    min-height: 100vh;
 }
+body {
+    margin: 0;
+    background-image: url(https://thewallpaper.co/wp-content/uploads/2020/07/texture-wallpaper-hd-pictures-images.jpg);
+}
+
+.title {
+    color: #b32626;
+    font-weight: normal;
+    text-align: center;
+    font-size: 6em;
+    font-family: OCR A Std, 'Courier New', Courier, monospace;
+} 
 
 .memory-game { 
     width: 448px;
@@ -24,7 +32,6 @@
 .memory-card {
     width: calc(25% - 10px);
     height: calc(33.333% - 10px);
-    margin: 5px;
     position: relative;
     transform: scale(1);
     transform-style: preserve-3d;
@@ -56,6 +63,28 @@
 
 }
 
-h1 {
-    color: yellow;
+
+@keyframes overlay-grow {  /* when you get in the level shows the worlds with gray background */
+    from {
+        background-color: rgba(0, 0, 0, 0);
+        font-size: 0;
+    }
+    to {
+        font-size: 8em;
+        background-color: rgba(0, 0, 0, .8);
+    }
+}
+
+
+
+@media (max-width: 600px) { /* when the link open in other devices*/
+    .container-info {
+        grid-template-columns: repeat(2, auto);
+    }
+
+    .game-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
 }

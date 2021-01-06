@@ -1,16 +1,18 @@
+
 const cards = document.querySelectorAll('.memory-card');
 
 let hasFlippedCard = false;
-let lockBoard = false
+let lockBoard = false;
 let firstCard, secondCard;
-
+var gameStarted = false;
+var runnig = false;
 
 function flipCard() {
+    
     if (lockBoard) return;
     if (this === firstCard) return;
 
    this.classList.add('flip');
-
    if (!hasFlippedCard) {
       //first click 
       hasFlippedCard = true;
@@ -21,10 +23,9 @@ function flipCard() {
    //second click
    
    secondCard = this;  
-       
+   
    checkForMatch();
    
-}
 
 function checkForMatch() {
     let isMatch = firstCard.dataset.img === secondCard.dataset.img;
@@ -57,9 +58,9 @@ function resetBoard() {  // to let you click the card you have clicked befor
     secondCard = null;
 }
 
-(function shuffle() {
+(function shuffle() { // when you refresh the site or enter the level agin it will shuffle the cards
     cards.forEach(card => {
-        let randomPos = Math.floor(Math.random() * 12);
+        let randomPos = Math.floor(Math.random() * 16);
         card.style.order = randomPos;
     });
 })();
