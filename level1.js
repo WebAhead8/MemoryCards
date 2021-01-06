@@ -72,4 +72,4 @@ function resetBoard() {  // to let you click the card you have clicked befor
 
 
 
-cards.forEach(card => card.addEventListener('click', flipCard))
+cards.forEach(card => card.addEventListener('click', flipCard))};
