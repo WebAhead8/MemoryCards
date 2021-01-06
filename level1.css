@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100vh;
+}
+
+body {
+    margin: 0;
+    background-image: url(https://wallpapercave.com/uwp/uwp228903.jpeg);
+}
+
+.title {
+    color: #b32626;
+    font-weight: normal;
+    text-align: center;
+    font-size: 6em;
+    font-family: Aharoni;
+}
+
+.memory-game {
+    width: 448px;
+    height: 448px;
+    display: flex;
+    margin: auto;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+.memory-card {
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.memory-card:active {
+    transform: scale(.97);
+    transition: transform .2s;
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    position: absolute;
+    border-radius: 5px;
+    backface-visibility: hidden;
+}
+
+.front-face {
+    transform: rotatey(180deg);
+    background: white;
+}
+
+@keyframes overlay-grow {
+    /* when you get in the level shows the worlds with gray background */
+    from {
+        background-color: rgba(0, 0, 0, 0);
+        font-size: 0;
+    }
+    to {
+        font-size: 8em;
+        background-color: rgba(0, 0, 0, .8);
+    }
+}
+
+@media (max-width: 600px) {
+    /* when the link open in other devices*/
+    .container-info {
+        grid-template-columns: repeat(2, auto);
+    }
+    .game-info {
+        flex-direction: column;
+        align-items: center;
+    }
+}
