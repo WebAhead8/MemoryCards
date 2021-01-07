@@ -1,19 +1,16 @@
-
 const cards = document.querySelectorAll('.memory-card');
 
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
 
-
 function flipCard() {
     
     if (lockBoard) return;
-    if (this === firstCard) return;
+    if (this === firstCard) return; // condition to avoid when you click twice over the same card gonna disable the cards by removing its event listener and remain flipped
 
    this.classList.add('flip');
-   if (!hasFlippedCard) {
-      //first click 
+   if (!hasFlippedCard) {  //the played clicked first card
       hasFlippedCard = true;
       firstCard = this;
 
@@ -22,9 +19,9 @@ function flipCard() {
    //second click
    
    secondCard = this;  
-   
+
    checkForMatch();
-   
+}  
 
 function checkForMatch() {
     let isMatch = firstCard.dataset.img === secondCard.dataset.img;
@@ -62,9 +59,13 @@ function resetBoard() {  // to let you click the card you have clicked befor
         let randomPos = Math.floor(Math.random() * 16);
         card.style.order = randomPos;
     });
-})();
+})(); //warp it inside a parenthesis and net next repair parenthesis to end of it that makes the function it will executed right after the player get in the site or refresh it
 
 
 
 
-cards.forEach(card => card.addEventListener('click', flipCard))};
+
+
+
+
+cards.forEach(card => card.addEventListener('click', flipCard));
