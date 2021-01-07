@@ -59,7 +59,7 @@ function resetBoard() {  // to let you click the card you have clicked befor
         let randomPos = Math.floor(Math.random() * 16);
         card.style.order = randomPos;
     });
-})(); //warp it inside a parenthesis and net next repair parenthesis to end of it that makes the function it will executed right after the player get in the site or refresh it
+})(); //warp it inside a parenthesis and net next repair parenthesis to end of it that makes the function it will executed right after the player get in the or refresh it
 
 
 

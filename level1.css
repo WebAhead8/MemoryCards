@@ -1,13 +1,14 @@
 * {
-  box-sizing: border-box;
-} 
+    box-sizing: border-box;
+}
 
 html {
     min-height: 100vh;
 }
+
 body {
     margin: 0;
-    background-image: url(https://thewallpaper.co/wp-content/uploads/2020/07/texture-wallpaper-hd-pictures-images.jpg);
+    background-image: url(https://wallpapercave.com/uwp/uwp228903.jpeg);
 }
 
 .title {
@@ -15,18 +16,16 @@ body {
     font-weight: normal;
     text-align: center;
     font-size: 6em;
-    font-family: OCR A Std, 'Courier New', Courier, monospace;
-} 
+    font-family: Aharoni;
+}
 
-.memory-game { 
+.memory-game {
     width: 448px;
     height: 448px;
     display: flex;
     margin: auto;
     flex-wrap: wrap;
     perspective: 1000px;
-   
-
 }
 
 .memory-card {
@@ -36,7 +35,6 @@ body {
     transform: scale(1);
     transform-style: preserve-3d;
     transition: transform .5s;
-   
 }
 
 .memory-card:active {
@@ -48,7 +46,8 @@ body {
     transform: rotateY(180deg);
 }
 
-.front-face,.back-face {
+.front-face,
+.back-face {
     width: 100%;
     height: 100%;
     padding: 10px;
@@ -60,7 +59,4 @@ body {
 .front-face {
     transform: rotatey(180deg);
     background: white;
-
 }
-
-
